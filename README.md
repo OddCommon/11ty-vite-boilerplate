@@ -40,7 +40,7 @@ We love React, it's really nice when building apps that require heavy state mana
 You can use the shortcode to create a statically rendered react component that Hydrates on client load.
 
 ```javascript
-{% react './path/to/component_or_app.jsx' true %}
+{% react './path/to/component_or_app.jsx', true, 'option-mount-id' %}
 ```
 
 Optionally you can also just import the component and not have it hydtrate.
