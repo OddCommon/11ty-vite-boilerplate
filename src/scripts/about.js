@@ -1,6 +1,6 @@
 import Base from './base';
 
-class Page extends Base {
+class About extends Base {
   constructor() {
     super();
   }
@@ -10,4 +10,4 @@ class Page extends Base {
   }
 }
 
-BorderlessB2B.page = new Page();
+new About();

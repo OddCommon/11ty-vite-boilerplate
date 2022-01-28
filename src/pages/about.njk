@@ -3,5 +3,10 @@
 
 <h1>About</h1>
 
-{% set scripts=['/scripts/about.js'] %}
+{% set scripts=[
+    {
+        'type': 'js',
+        'path': '/scripts/about.js'
+    }
+]%}
 {% include "./partials/_footer.njk" %}
