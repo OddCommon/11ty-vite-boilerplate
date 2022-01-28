@@ -1,0 +1,11 @@
+        {% js '/scripts/index.js' %}
+        {% asyncEach script in scripts %}
+            {% if script.type === "js" %}
+                {% js script.path %}
+            {% endif %}
+            {% if script.type === "react" %}
+                {% react script.path, script.hydrate, script.mount %}
+            {% endif %}
+        {% endeach %}
+    </body>
+</html>

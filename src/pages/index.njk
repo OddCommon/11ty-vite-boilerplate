@@ -1,0 +1,18 @@
+{% set title = "OddCommon" %}
+{% include "./partials/_header.njk" %}
+
+<h1>Home</h1>
+<a href="/about/">About</a>
+<p>Hydrated</p>
+{% react '/scripts/components/ViteCounter/TimesWeMispronouncedVite.jsx', true, 'vite-counter' %}
+
+<p>Static</p>
+{% react '/scripts/components/ViteCounter/TimesWeMispronouncedVite.jsx', false, 'vite-counter-static' %}
+
+{% set scripts=[
+    {
+        'type': 'js',
+        'path': '/scripts/homepage.js'
+    }
+] %}
+{% include "./partials/_footer.njk" %}
