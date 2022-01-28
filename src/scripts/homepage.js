@@ -7,9 +7,7 @@ class Homepage extends Base {
 
   async initialize() {
     // Dynamic import React component
-    // const { init } = await import("./components/ViteCounter");
-    // init();
-    // console.log("Vite Counter")
+    await import('./components/ViteCounter');
   }
 }
 

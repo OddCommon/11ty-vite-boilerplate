@@ -1,4 +1,4 @@
-const { renderReactComponent } = require('./utils/11ty-react');
+const { renderReactComponent } = require('./utils');
 
 module.exports = eleventyConfig => {
   eleventyConfig.on('beforeBuild', function () {
