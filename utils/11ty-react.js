@@ -3,7 +3,7 @@ const requireFromString = require('require-from-string');
 const { renderToString, renderToStaticMarkup } = require('react-dom/server');
 const React = require('react');
 
-const renderReactComponent = async (id, componentPath, hydrate, mount) => {
+const renderReactComponent = async (id, componentPath, hydrate, mount, data = {}) => {
   const componentRootId = mount ? mount : `component-root-${id}`;
 
   const { output } = await viteBuild({
@@ -19,8 +19,8 @@ const renderReactComponent = async (id, componentPath, hydrate, mount) => {
 
   const { default: Component } = requireFromString(output[0].code);
   const html = hydrate
-    ? renderToString(React.createElement(Component))
-    : renderToStaticMarkup(React.createElement(Component));
+    ? renderToString(React.createElement(Component, data))
+    : renderToStaticMarkup(React.createElement(Component, data));
 
   const reactComponent = `
     <div id="${componentRootId}">${html}</div>
@@ -31,7 +31,7 @@ const renderReactComponent = async (id, componentPath, hydrate, mount) => {
     import React from 'react';
     import ReactDOM from 'react-dom';
     const componentRoot = document.getElementById('${componentRootId}');
-    ReactDOM.hydrate(React.createElement(Component), componentRoot);
+    ReactDOM.hydrate(React.createElement(Component, ${JSON.stringify(data)}), componentRoot);
     </script>`
         : ''
     }

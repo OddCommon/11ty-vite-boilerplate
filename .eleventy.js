@@ -17,9 +17,9 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.addNunjucksAsyncShortcode(
     'react',
-    async (componentPath, hydrate = false, mount) => {
+    async (componentPath, data, hydrate = false, mount = null) => {
       idCounter += 1;
-      return await renderReactComponent(idCounter, componentPath, hydrate, mount);
+      return await renderReactComponent(idCounter, componentPath, hydrate, mount, data);
     }
   );
 

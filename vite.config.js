@@ -5,6 +5,9 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [],
   root: './_dev/',
+  server: {
+    host: true,
+  },
   build: {
     outDir: `${path.resolve(__dirname, './dist')}`,
     rollupOptions: {
