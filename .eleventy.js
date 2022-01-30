@@ -15,13 +15,16 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy({ './src/styles': 'styles' });
   eleventyConfig.addPassthroughCopy({ './src/public': 'public' });
 
-  eleventyConfig.addNunjucksAsyncShortcode(
-    'react',
-    async (componentPath, data, hydrate = false, mount = null) => {
-      idCounter += 1;
-      return await renderReactComponent(idCounter, componentPath, hydrate, mount, data);
-    }
-  );
+  eleventyConfig.addNunjucksAsyncShortcode('react', async (componentPath, options = {}) => {
+    idCounter += 1;
+
+    const hydrate = options.hydrate === false ? false : true;
+    const mount = options.mount || null;
+    const data = options.data || {};
+
+    console.log(options.hydrate, hydrate, mount, data);
+    return await renderReactComponent(idCounter, componentPath, hydrate, mount, data);
+  });
 
   eleventyConfig.addShortcode('js', function (componentPath) {
     return `<script type="module" src=${JSON.stringify(componentPath)}></script>`;

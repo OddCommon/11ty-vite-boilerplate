@@ -7,11 +7,32 @@
 <p>Dynamically Loaded</p>
 <div id="dynamic-vite-counter"></div>
 
-<p>Hydrated</p>
-{% react '/scripts/components/ViteCounter/TimesWeMispronouncedVite.jsx', {initialCount: 12}, true, 'vite-counter' %}
+<p>Default No Data</p>
+{% react '/scripts/components/ViteCounter/TimesWeMispronouncedVite.jsx' %}
 
-<p>Static</p>
-{% react '/scripts/components/ViteCounter/TimesWeMispronouncedVite.jsx', {initialCount: 12}, false, 'vite-counter-static' %}
+
+<p>Hydrated With Data</p>
+{% react '/scripts/components/ViteCounter/TimesWeMispronouncedVite.jsx', 
+    {
+        hydrate: true, 
+        mount: 'vite-counter', 
+        data: { 
+            initialCount: 12
+        } 
+    }
+%}
+
+<p>Static with Data</p>
+{% react '/scripts/components/ViteCounter/TimesWeMispronouncedVite.jsx', 
+    {
+        hydrate: false, 
+        mount: 'vite-counter-static', 
+        data: { 
+            initialCount: 12
+        } 
+    } 
+%}
+
 
 {% set scripts=[
     {
