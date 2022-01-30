@@ -4,7 +4,7 @@
   "description": "The Borderless B2B Website",
   "main": "index.js",
   "scripts": {
-    "start": "rm -rf ./_dev ./dist && concurrently \"npx @11ty/eleventy --watch\" \"npx vite _dev\"",
+    "start": "rm -rf ./_dev ./dist && concurrently \"npx @11ty/eleventy --watch\" \"npx vite\"",
     "dist": "rm -rf ./_dev ./dist && npx @11ty/eleventy && npx vite build",
     "format": "npx pretty-quick --staged"
   },
