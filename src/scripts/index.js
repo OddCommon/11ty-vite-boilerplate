@@ -1,14 +1,14 @@
 import Base from './base';
 
-class BorderlessB2B extends Base {
+class OddCommon extends Base {
   constructor() {
     super();
   }
 
   async initialize() {
-    console.log('Borderless B2B Site');
+    console.log('OddCommon 11ty + Vite');
   }
 }
 
 // Kick'r off
-window.BorderlessB2B = new BorderlessB2B();
+window.OddCommon = new OddCommon();
