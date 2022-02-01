@@ -11,10 +11,9 @@ export default defineConfig({
   build: {
     outDir: `${path.resolve(__dirname, './dist')}`,
     rollupOptions: {
-      input: {
-        index: resolve(__dirname, './_dev/index.html'),
-        about: resolve(__dirname, './_dev/about/index.html'),
-      },
+      input: require('fast-glob')
+        .sync(['./_dev/**/*.html', '!dist'])
+        .map(entry => path.resolve(__dirname, entry)),
     },
   },
   resolve: {
