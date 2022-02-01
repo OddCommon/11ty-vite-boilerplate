@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{title}}</title>
+        <title>{{ title }}</title>
 
         <meta name="theme-color" content="#000000" />
         <meta name="twitter:title" content="OddCommon" />
@@ -29,3 +29,17 @@
     </head>
 
     <body>
+        {% include 'partials/header.njk' %}
+        
+        {{ content | safe }}
+
+        {% include 'partials/footer.njk' %}
+
+        {% js '/scripts/index.js' %}
+        {% asyncEach script in scripts %}
+            {% if script.type === "js" %}
+                {% js script.path %}
+            {% endif %}
+        {% endeach %}
+    </body>
+</html>

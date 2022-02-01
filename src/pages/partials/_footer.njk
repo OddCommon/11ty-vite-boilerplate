@@ -1,8 +1,0 @@
-        {% js '/scripts/index.js' %}
-        {% asyncEach script in scripts %}
-            {% if script.type === "js" %}
-                {% js script.path %}
-            {% endif %}
-        {% endeach %}
-    </body>
-</html>
