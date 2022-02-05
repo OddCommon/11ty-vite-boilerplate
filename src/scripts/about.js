@@ -7,7 +7,7 @@ class About extends Base {
 
   async initialize() {
     console.log('About');
-    await import('./components/ViteCounter');
+    await import(/* webpackPrefetch: true */ './components/ViteCounter');
   }
 }
 

@@ -1,9 +1,12 @@
 ---
 layout: base
 title: "ODC: 11ty + Vite"
+scripts:
+  - type: js
+    path: "/scripts/homepage.js"
 ---
 <h1>Home</h1>
-<a href="/about/">About</a>
+<a href="/about/" data-turbo-action="advance">Edit</a>
 
 <p>Dynamically Loaded</p>
 <div id="dynamic-vite-counter"></div>
@@ -33,11 +36,3 @@ title: "ODC: 11ty + Vite"
         } 
     } 
 %}
-
-
-{% set scripts=[
-    {
-        'type': 'js',
-        'path': '/scripts/homepage.js'
-    }
-] %}
