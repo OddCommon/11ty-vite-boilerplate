@@ -1,7 +1,7 @@
 {
-  "name": "borderless-b2b",
+  "name": "oc-11ty-vite",
   "version": "1.0.0",
-  "description": "The Borderless B2B Website",
+  "description": "A neat place to start with 11ty and Vite",
   "main": "index.js",
   "scripts": {
     "start": "rm -rf ./_dev ./dist && concurrently \"npx @11ty/eleventy --watch\" \"npx vite\"",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OddCommon/borderless-b2b.git"
+    "url": "git+https://github.com/OddCommon/11ty-vite-boilerplate.git"
   },
   "keywords": [],
   "author": "OddCommon <oc.dev.tools@oddcommon.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OddCommon/borderless-b2b/issues"
+    "url": "https://github.com/OddCommon/11ty-vite-boilerplate/issues"
   },
-  "homepage": "https://github.com/OddCommon/borderless-b2b#readme",
+  "homepage": "https://github.com/OddCommon/11ty-vite-boilerplate#readme",
   "dependencies": {
     "@oddcommon/utils": "^1.2.5",
     "modern-normalize": "^1.1.0",
