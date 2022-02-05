@@ -5,11 +5,13 @@
     "ecmaVersion": 2020,
     "ecmaFeatures": {
       "jsx": true
-    }
+    },
+    "requireConfigFile": false
   },
   "env": {
     "node": true,
-    "browser": true
+    "browser": true,
+    "es6": true
   },
   "settings": {
     "react": {
